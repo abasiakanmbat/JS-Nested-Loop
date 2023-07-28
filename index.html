@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nested</title>
     <style>
-        body{color: #fff;
+        body {
+            color: #fff;
             background-color: rgb(7, 95, 95);
             text-align: center;
             padding-top: 20vh;
+            
+        }
+        button{color: #fff;
+            height: 30px;
+            width: 120px;
+            background-color: transparent;
+            border:1px solid #fff;
         }
     </style>
 </head>
+
 <body>
     <h1>Nested Loop</h1>
     <p>Using Switch Case</p>
-     <script>
-        
-        let person = prompt('employee or visitor?');
-        let attendance = prompt('Enter attendance');
+    <button onclick="work()">Click Me</button>
 
-    
-        switch(person) {
-            case 'employee':
-                switch(true) {
-                    case attendance >= '25':
-                        alert('You have earned a Bonus on your next wager!');
-                        break;
-                    default:
-                        alert('Keep working, a bonus awaits you.');
-                        break;
-                };
-                break;
-            case 'visitor':
-                alert('Hope you enjoyed your visit.');
-                break;
+    <script>
+        function work() {
 
-            default:
-                alert('You must be the C.E.O, i guess.');
+            let person = prompt('employee or visitor?');
+
+
+            switch (person) {
+
+                case 'employee':
+                    let attendance = prompt('Enter attendance');
+                    switch (true) {
+                        case attendance >= '25':
+                            alert('You have earned a Bonus on your next wager!');
+                            break;
+                        default:
+                            alert('Keep working, a bonus awaits you.');
+                            break;
+                    };
+                    break;
+                case 'visitor':
+                    alert('Hope you enjoyed your visit.');
+                    break;
+
+                default:
+                    prompt("Kindly Select an option");
+                    break;
+            }
         }
-
+        
     </script>
 </body>
+
 </html>
