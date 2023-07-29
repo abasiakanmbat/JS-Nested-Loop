@@ -11,13 +11,15 @@
             background-color: rgb(7, 95, 95);
             text-align: center;
             padding-top: 20vh;
-            
+
         }
-        button{color: #fff;
+
+        button {
+            color: #fff;
             height: 30px;
             width: 120px;
             background-color: transparent;
-            border:1px solid #fff;
+            border: 1px solid #fff;
         }
     </style>
 </head>
@@ -36,26 +38,42 @@
             switch (person) {
 
                 case 'employee':
-                    let attendance = prompt('Enter attendance');
-                    switch (true) {
-                        case attendance >= '25':
-                            alert('You have earned a Bonus on your next wager!');
-                            break;
-                        default:
-                            alert('Keep working, a bonus awaits you.');
-                            break;
-                    };
+                    frequency();
                     break;
                 case 'visitor':
                     alert('Hope you enjoyed your visit.');
                     break;
+                // This case is for the cancel button 
+                case (null):
+                    break;
 
                 default:
-                    prompt("Kindly Select an option");
+                    alert("Kindly Select an option");
+                    work();
                     break;
             }
         }
-        
+        function frequency() {
+
+            let attendance = prompt('Enter attendance');
+            switch (attendance) {
+                case (attendance >= '25'):
+                    alert('You have earned a Bonus on your next wager!');
+                    break;
+                case (null):
+                    work();
+                    break;
+                case (attendance < 25):
+                    alert('Keep working, a bonus awaits you.');
+                    break;
+
+                default:
+                    alert('Kindly input attendance');
+                    frequency();
+                    break;
+            };
+        }
+
     </script>
 </body>
 
